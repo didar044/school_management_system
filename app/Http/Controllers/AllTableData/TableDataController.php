@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Http\Controllers\AllTableData;
+
+use App\Http\Controllers\Controller;  
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema; 
+
+class TableDataController extends Controller
+{
+    public function index()
+    {
+        return view('pages.alltabledata.tabledata.index'); 
+    }
+
+    public function showData()
+    {
+        
+        
+         
+               $database = DB::getDatabaseName();
+
+    // Get all tables with 'fic_' prefix in the current database
+    $tablesRaw = DB::select("SELECT table_name FROM information_schema.tables WHERE table_schema = ? AND table_name LIKE 'fic_%'", [$database]);
+
+    $tables = collect($tablesRaw)->pluck('table_name');
+
+    return view('pages.alltabledata.tabledata.index', compact('tables'));
+   
+    }
+}

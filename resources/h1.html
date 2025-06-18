@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap Icons Example</title>
+  <!-- Bootstrap Icons CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .icon-container {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #0d6efd; /* Bootstrap primary blue */
+      cursor: pointer;
+      user-select: none;
+    }
+    .icon-label {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: #333;
+    }
+    .icon-container:hover {
+      color: #0a58ca; /* darker blue on hover */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="icon-container" title="SMS">
+    <i class="bi bi-chat-dots"></i>
+    <div class="icon-label">SMS</div>
+  </div>
+
+  <div class="icon-container" title="Notification">
+    <i class="bi bi-bell"></i>
+    <div class="icon-label">Notification</div>
+  </div>
+
+  <div class="icon-container" title="Quick Action">
+    <i class="bi bi-lightning-charge"></i>
+    <div class="icon-label">Quick Action</div>
+  </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap Icons - SMS, Notification, Quick Action</title>
+  <!-- Bootstrap Icons CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f8f9fa;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    .icon-block {
+      width: 150px;
+      text-align: center;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      user-select: none;
+      cursor: default;
+      transition: box-shadow 0.2s ease;
+    }
+    .icon-block:hover {
+      box-shadow: 0 6px 15px rgb(0 0 0 / 0.2);
+    }
+    .icon {
+      font-size: 3.2rem;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s ease;
+    }
+    .primary {
+      color: #0d6efd;
+    }
+    .success {
+      color: #198754;
+    }
+    .danger {
+      color: #dc3545;
+    }
+    .warning {
+      color: #ffc107;
+    }
+    .icon-label {
+      font-size: 1.1rem;
+      color: #333;
+    }
+    button.icon-btn {
+      background: none;
+      border: none;
+      color: #0d6efd;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    button.icon-btn:hover {
+      color: #0a58ca;
+    }
+    button.icon-btn .label {
+      font-size: 1rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Basic Icons -->
+  <div class="icon-block" title="SMS - Chat Dots">
+    <i class="bi bi-chat-dots icon primary"></i>
+    <div class="icon-label">SMS</div>
+  </div>
+
+  <div class="icon-block" title="Notification - Bell">
+    <i class="bi bi-bell icon warning"></i>
+    <div class="icon-label">Notification</div>
+  </div>
+
+  <div class="icon-block" title="Quick Action - Lightning Charge">
+    <i class="bi bi-lightning-charge icon danger"></i>
+    <div class="icon-label">Quick Action</div>
+  </div>
+
+  <!-- Variants -->
+  <div class="icon-block" title="SMS - Chat Text">
+    <i class="bi bi-chat-text icon success"></i>
+    <div class="icon-label">SMS Text</div>
+  </div>
+
+  <div class="icon-block" title="Notification - Bell Fill">
+    <i class="bi bi-bell-fill icon danger"></i>
+    <div class="icon-label">Notification Fill</div>
+  </div>
+
+  <div class="icon-block" title="Quick Action - Lightning Fill">
+    <i class="bi bi-lightning-charge-fill icon primary"></i>
+    <div class="icon-label">Quick Action Fill</div>
+  </div>
+
+  <!-- Buttons -->
+  <button class="icon-btn" title="Send SMS">
+    <i class="bi bi-send-fill"></i>
+    <span class="label">Send SMS</span>
+  </button>
+
+  <button class="icon-btn" title="Show Notifications">
+    <i class="bi bi-bell-fill"></i>
+    <span class="label">Notifications</span>
+  </button>
+
+  <button class="icon-btn" title="Quick Actions">
+    <i class="bi bi-lightning-fill"></i>
+    <span class="label">Quick Action</span>
+  </button>
+
+</body>
+</html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+<div style="font-size: 3rem; color: #0d6efd; display: flex; gap: 20px; align-items: center;">
+  <i class="bi bi-chat"></i>
+  <i class="bi bi-chat-dots"></i>
+  <i class="bi bi-chat-text"></i>
+  <i class="bi bi-chat-square-text"></i>
+</div>
+  <div class="icon-wrapper">
+    <i class="bi bi-layers"></i>
+    <div class="label">Bootstrap Layers Icon</div>
+  </div>
+
+
+  <!-- Book icon -->
+<i class="bi bi-book" style="font-size: 2rem;"></i>
+
+<!-- Book-half icon -->
+<i class="bi bi-book-half" style="font-size: 2rem;"></i>
+
+<!-- Book-fill icon (solid style) -->
+<i class="bi bi-book-fill" style="font-size: 2rem;"></i>
+
+<!-- Journal icon (for library journals/records) -->
+<i class="bi bi-journal" style="font-size: 2rem;"></i>
+
+<!-- Journal-bookmark icon -->
+<i class="bi bi-journal-bookmark" style="font-size: 2rem;"></i>
+
+<!-- Library shelves look: Collection icon -->
+<i class="bi bi-collection" style="font-size: 2rem;"></i>
