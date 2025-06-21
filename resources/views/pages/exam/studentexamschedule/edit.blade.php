@@ -186,6 +186,34 @@
     </form>
 </div>
 
+ <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const shiftSelect = document.getElementById('shift_id');
+    const sectionSelect = document.getElementById('section_id');
 
+    shiftSelect.addEventListener('change', function () {
+        const shiftId = this.value;
+
+        if (shiftId) {
+              fetch(`{{ url('get-sections') }}/${shiftId}`)
+                .then(response => response.json())
+                .then(data => {
+                    sectionSelect.innerHTML = '<option value="">-- Select Section --</option>';
+                    data.forEach(section => {
+                        const option = document.createElement('option');
+                        option.value = section.id;
+                        option.textContent = section.name;
+                        sectionSelect.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching sections:', error);
+                });
+        } else {
+            sectionSelect.innerHTML = '<option value="">-- Select Section --</option>';
+        }
+    });
+});
+</script> 
 
 @endsection

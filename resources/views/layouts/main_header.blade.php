@@ -8,10 +8,12 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-    <meta
+    <!-- <meta
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
       name="viewport"
-    />
+    /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
     <link
       rel="icon"
       href="assets/img/kaiadmin/favicon.ico"

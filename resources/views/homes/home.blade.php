@@ -250,13 +250,13 @@
                     <div class="row align-items-center">
                         <div class="col-icon">
                             <div class="icon-big text-center icon-secondary bubble-shadow-small">
-                                <i class="far fa-check-circle"></i>
+                                <i class="fas fa-chart-line"></i>
                             </div>
                         </div>
                         <div class="col col-stats ms-3 ms-sm-0">
                             <div class="numbers">
-                                <p class="card-category" style="font-size: 20px;">Others</p>
-                                <h4 class="card-title count-up" data-target="500">0</h4>
+                                <p class="card-category" style="font-size: 20px;">Revenue </p>
+                                <h4 class="card-title count-up" data-target="{{ $data['netIncome'] }}">0</h4>
                             </div>
                         </div>
                     </div>

@@ -32,7 +32,7 @@
           <div class="collapse" id="dashboard">
             <ul class="nav nav-collapse">
               <li>
-                <a href="{{ url('/') }}">
+                <a href="{{ url('/das') }}">
                   <span class="sub-item">Dashboard 1</span>
                 </a>
               </li>

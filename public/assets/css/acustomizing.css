@@ -27,6 +27,13 @@
     tr:hover {
         background-color: #e9f5ff;
     }
+    .divc {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+
     /* edit view delete */
     .buttonc {
     position: relative;
@@ -68,12 +75,6 @@
         z-index: 1;
     }
 
-    .divc {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        justify-content: center;
-    }
 
      /* go to add back */
     .buttonbi {
@@ -268,7 +269,7 @@
     left: 0;
     width: 0;
     height: 100%;
-    background: #00abf0;;
+    background: #00abf0;
     z-index: -1;
     transition: 1s;
   

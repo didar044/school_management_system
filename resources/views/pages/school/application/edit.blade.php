@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const shiftId = this.value;
 
         if (shiftId) {
-            fetch(`/get-sections/${shiftId}`)
+             fetch(`{{ url('get-sections') }}/${shiftId}`)
                 .then(response => response.json())
                 .then(data => {
                     sectionSelect.innerHTML = '<option value="">-- Select Section --</option>';

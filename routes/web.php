@@ -44,9 +44,14 @@ use App\Http\Controllers\AllTableData\TableDataController;
 
 
 
-Route::get('/', function () {
+// Route::get('/', function () {
+//     return view('homes.home');
+// });
+
+Route::match(['get', 'head'], '/', function () {
     return view('homes.home');
 });
+
 Route::get('/', [DashboardController::class, 'dashboard']);
 
 Route::resource('classes',ClasseController::class);

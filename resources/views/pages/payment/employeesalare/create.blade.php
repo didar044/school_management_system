@@ -146,7 +146,8 @@
                 const categoryId = this.value;
 
                 if (categoryId) {
-                    fetch(`/get-category-salary/${categoryId}`)
+                    
+                    fetch(`{{ url('get-category-salary') }}/${categoryId}`)
                         .then(response => response.json())
                         .then(data => {
                             salaryInput.value = data.salary || 0;

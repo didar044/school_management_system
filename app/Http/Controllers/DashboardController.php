@@ -64,7 +64,7 @@ class DashboardController extends Controller
                         $totalDue += $due;
                     }
                     
-
+                  $netIncome= $totalcollection - $totalsalarypaid;
 
                 $data=[
                     "employeescount" => Employee::count(),
@@ -86,6 +86,7 @@ class DashboardController extends Controller
                     "fullPaidCount"=>$fullPaidCount,
                     "partialPaidCount"=>$partialPaidCount,
                     "totalDue"=>$totalDue,
+                    "netIncome"=>$netIncome,
                     
                 ];
 

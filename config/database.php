@@ -53,7 +53,7 @@ return [
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => env('DB_CHARSET', 'utf8mb4'),
             'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
-            'prefix' => env('DB_TABLE_PREFIX', 'fic_'),
+            'prefix' => env('DB_TABLE_PREFIX', ''),
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
@@ -61,6 +61,41 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
+         // just for all data 
+        // 'mysql_noprefix' => [
+        //     'driver' => 'mysql',
+        //     'host' => env('DB_HOST', '127.0.0.1'),
+        //     'port' => env('DB_PORT', '3306'),
+        //     'database' => env('DB_DATABASE', 'forge'),
+        //     'username' => env('DB_USERNAME', 'forge'),
+        //     'password' => env('DB_PASSWORD', ''),
+        //     'unix_socket' => '',
+        //     'charset' => 'utf8mb4',
+        //     'collation' => 'utf8mb4_unicode_ci',
+        //     'prefix' => '', // ❌ No prefix
+        //     'strict' => true,
+        //     'engine' => null,
+        // ],
+
+           
+        //   'mysql' => [
+        //     'driver' => 'mysql',
+        //     'host' => '127.0.0.1',
+        //     'port' => '3306',
+        //     'database' => '',         // ✅ Your actual DB name
+        //     'username' => '',                // ✅ Your username
+        //     'password' => '',              // ✅ Your password
+        //     'unix_socket' => '',
+        //     'charset' => 'utf8mb4',
+        //     'collation' => 'utf8mb4_unicode_ci',
+        //     'prefix' => '',                   // ✅ Optional: only if your tables start with `fic_`
+        //     'prefix_indexes' => true,
+        //     'strict' => true,
+        //     'engine' => null,
+        //     'options' => extension_loaded('pdo_mysql') ? array_filter([
+        //         PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+        //     ]) : [],
+        // ],
 
         'mariadb' => [
             'driver' => 'mariadb',

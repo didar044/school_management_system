@@ -311,7 +311,7 @@
                     <div class="form-group">
                         <label for="date">Reiceve By</label>
                         <select id="reiceve_by" name="reiceve_by" required>
-                            <option value="">- sent to database-</option>
+                            <option value="">- Select -</option>
                             @foreach ($employeeadministrators as $employeeadministrator)
                                 @if (
                                         $employeeadministrator->role === "Accountants" ||
@@ -425,9 +425,12 @@
                                     <td>{{ $detail->fee }}</td>
                                     <td>{{ $detail->waived }}</td>
                                     <td>{{ $detail->fee - $detail->waived }}</td>
+                                   
                                 </tr>
                             @endforeach
+                             
                         @endforeach
+                       
                     </tbody>
                 </table>
             </div>

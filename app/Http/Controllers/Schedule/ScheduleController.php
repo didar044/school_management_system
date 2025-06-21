@@ -87,8 +87,9 @@ class ScheduleController extends Controller
         $periods=Period::all();
         $rooms=Room::where('description','Classroom')->get();
         $subjects=Subject::all();
+        $sections=Section::all();
         $employees = Employee::where('employee_categorie_id', 1)->get();
-        return view('pages.schedule.schedulemanage.edit',["schedules"=>$schedules,"shifts"=>$shifts,"classes"=>$classes,"rooms"=>$rooms,"subjects"=>$subjects,"employees"=>$employees,"periods"=>$periods]);
+        return view('pages.schedule.schedulemanage.edit',["sections"=>$sections,"schedules"=>$schedules,"shifts"=>$shifts,"classes"=>$classes,"rooms"=>$rooms,"subjects"=>$subjects,"employees"=>$employees,"periods"=>$periods]);
 
     }
 

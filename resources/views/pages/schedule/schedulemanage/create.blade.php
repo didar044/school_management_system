@@ -185,26 +185,34 @@
     </form>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $('#shift_id').on('change', function() {
-        var shiftId = $(this).val();
+ <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const shiftSelect = document.getElementById('shift_id');
+    const sectionSelect = document.getElementById('section_id');
+
+    shiftSelect.addEventListener('change', function () {
+        const shiftId = this.value;
+
         if (shiftId) {
-            $.ajax({
-                url: '/get-sections/' + shiftId,
-                type: 'GET',
-                dataType: 'json',
-                success: function(data) {
-                    $('#section_id').empty().append('<option value="">-- Select Section --</option>');
-                    $.each(data, function(index, section) {
-                        $('#section_id').append('<option value="' + section.id + '">' + section.name + '</option>');
+             fetch(`{{ url('get-sections') }}/${shiftId}`)
+                .then(response => response.json())
+                .then(data => {
+                    sectionSelect.innerHTML = '<option value="">-- Select Section --</option>';
+                    data.forEach(section => {
+                        const option = document.createElement('option');
+                        option.value = section.id;
+                        option.textContent = section.name;
+                        sectionSelect.appendChild(option);
                     });
-                }
-            });
+                })
+                .catch(error => {
+                    console.error('Error fetching sections:', error);
+                });
         } else {
-            $('#section_id').html('<option value="">-- Select Section --</option>');
+            sectionSelect.innerHTML = '<option value="">-- Select Section --</option>';
         }
     });
-</script>
+});
+</script> 
 
 @endsection

@@ -2,30 +2,36 @@
 
 namespace App\Http\Controllers\AllTableData;
 
-use App\Http\Controllers\Controller;  
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema; 
+use Illuminate\Support\Str;
 
 class TableDataController extends Controller
 {
     public function index()
     {
-        return view('pages.alltabledata.tabledata.index'); 
+        // Just show the form / button to load data
+        return view('pages.alltabledata.tabledata.index');
     }
 
     public function showData()
-    {
-        
-        
-         
-               $database = DB::getDatabaseName();
+        {
+            $database = DB::getDatabaseName();
 
-    // Get all tables with 'fic_' prefix in the current database
-    $tablesRaw = DB::select("SELECT table_name FROM information_schema.tables WHERE table_schema = ? AND table_name LIKE 'fic_%'", [$database]);
+            $tablesRaw = DB::select("SHOW TABLES");
 
-    $tables = collect($tablesRaw)->pluck('table_name');
+            $key = 'Tables_in_' . $database;
 
-    return view('pages.alltabledata.tabledata.index', compact('tables'));
-   
-    }
+            // Filter only tables with prefix "fic_"
+            $tables = collect($tablesRaw)->map(function ($item) use ($key) {
+                $array = (array) $item;
+                return $array[$key] ?? null;
+            })->filter(function ($tableName) {
+                return Str::startsWith($tableName, 'fic_'); // ✅ Only tables that start with 'fic_'
+            });
+
+            return view('pages.alltabledata.tabledata.index', compact('tables'));
+        }
+
+
 }

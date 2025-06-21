@@ -155,7 +155,15 @@
                 <div class="form-group">
                     <label for="section_id">Section:</label>
                     <select id="section_id" name="section_id" required>
-                        <option value="">-- Select Section --</option>
+                        @foreach ($sections as $section)
+                            @if ($section->shift_id == $schedules->shift_id)
+                                <option value="{{ $section->id }}" {{ $schedules->section_id == $section->id ? 'selected' : '' }}>
+                                    {{ $section->name }}
+                                </option>
+                            @endif
+                        @endforeach
+
+                        
                     </select>
                 </div>
            </div>
@@ -166,7 +174,6 @@
     </form>
 </div>
 
-
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const shiftSelect = document.getElementById('shift_id');
@@ -175,26 +182,27 @@
         shiftSelect.addEventListener('change', function () {
             const shiftId = this.value;
 
-            // Clear existing options
-            sectionSelect.innerHTML = '<option value="">-- Select Section --</option>';
-
             if (shiftId) {
-                fetch(`/get-sections/${shiftId}`)
+                fetch(`{{ url('get-sections') }}/${shiftId}`)
                     .then(response => response.json())
-                    .then(sections => {
-                        sections.forEach(section => {
+                    .then(data => {
+                        sectionSelect.innerHTML = '<option value="">-- Select Section --</option>';
+                        data.forEach(section => {
                             const option = document.createElement('option');
                             option.value = section.id;
-                            option.text = section.name;
+                            option.textContent = section.name;
                             sectionSelect.appendChild(option);
                         });
+                    })
+                    .catch(error => {
+                        console.error('Error fetching sections:', error);
                     });
+            } else {
+                sectionSelect.innerHTML = '<option value="">-- Select Section --</option>';
             }
         });
-
-       
     });
-</script>
+</script> 
 
 
 @endsection
