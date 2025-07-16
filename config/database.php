@@ -53,7 +53,7 @@ return [
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => env('DB_CHARSET', 'utf8mb4'),
             'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
-            'prefix' => env('DB_TABLE_PREFIX', ''),
+            'prefix' => env('DB_TABLE_PREFIX', 'fic_'),
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
@@ -82,13 +82,13 @@ return [
         //     'driver' => 'mysql',
         //     'host' => '127.0.0.1',
         //     'port' => '3306',
-        //     'database' => '',         // ✅ Your actual DB name
-        //     'username' => '',                // ✅ Your username
+        //     'database' => 'wdpf62_didar',         // ✅ Your actual DB name
+        //     'username' => 'didar',                // ✅ Your username
         //     'password' => '',              // ✅ Your password
         //     'unix_socket' => '',
         //     'charset' => 'utf8mb4',
         //     'collation' => 'utf8mb4_unicode_ci',
-        //     'prefix' => '',                   // ✅ Optional: only if your tables start with `fic_`
+        //     'prefix' => 'fic_',                   // ✅ Optional: only if your tables start with `fic_`
         //     'prefix_indexes' => true,
         //     'strict' => true,
         //     'engine' => null,
