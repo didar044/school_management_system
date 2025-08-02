@@ -14,7 +14,7 @@
         </button>
     @endforeach
 </div>
-
+<div class="table-responsive ">
 <table>
     <tr>
         <th>Id</th>
@@ -42,7 +42,7 @@
     @endforeach
     
 </table>
-
+</div>
 
 
 

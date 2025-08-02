@@ -13,12 +13,17 @@ class SectionController extends Controller
     
     public function index()
     {
-       // $sections=DB::table("sections")->get();
+        // $sections=DB::table("sections")->get();
+
         //print_r($sections);
+        $shifts=Shift::all();
 
         // its for relation table
-        $sections=Section::with('shift')->get();
-        return view('pages.batch.section.index',["sections"=>$sections]);
+        $sections=Section::with('shift')->latest()->get();
+
+       // return view('pages.batch.section.index',["sections"=>$sections]);
+
+       return view('pages.batch.section.index', compact("sections" ));
         
     }
 
@@ -32,12 +37,14 @@ class SectionController extends Controller
 
    
     public function store(Request $request)
-    {
+    {   
+
         $sections=new Section();
         $sections->name=$request->name;
         $sections->shift_id=$request->shift_id;
         $sections->save();
         return redirect('/sections');
+        
     }
 
    
@@ -57,7 +64,7 @@ class SectionController extends Controller
 
     
     public function update(Request $request, Section $section)
-    {
+    {    
         $section->name=$request->name;
         $section->shift_id=$request->shift_id;
         $section->save();

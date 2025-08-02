@@ -68,7 +68,7 @@
         @csrf
 
 
-
+  <div class="table-responsive ">
         <table class="table table-bordered">
             <div style="display: flex; align-items: center; justify-content:  space-around;">
 
@@ -137,7 +137,7 @@
             </tbody>
 
         </table>
-
+</div>
         <!-- <div class="mb-3">
                 <label for="date" class="form-label">Date</label>
                 <input type="date" name="date" id="date" class="form-control" value="{{ old('date', now()->toDateString()) }}" required>

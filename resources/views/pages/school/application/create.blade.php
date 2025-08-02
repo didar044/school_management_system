@@ -207,7 +207,7 @@
 </div>
 
 
-<script>
+ <script>
 document.addEventListener('DOMContentLoaded', function () {
     const shiftSelect = document.getElementById('shift_id');
     const sectionSelect = document.getElementById('section_id');
@@ -216,8 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const shiftId = this.value;
 
         if (shiftId) {
-            fetch(`{{ url('get-sections') }}/${shiftId}`)
-
+            fetch(`/get-sections/${shiftId}`)
                 .then(response => response.json())
                 .then(data => {
                     sectionSelect.innerHTML = '<option value="">-- Select Section --</option>';

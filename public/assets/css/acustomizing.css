@@ -1,5 +1,4 @@
-
-    table {
+/* table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 20px;
@@ -26,155 +25,226 @@
 
     tr:hover {
         background-color: #e9f5ff;
-    }
-    .divc {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        justify-content: center;
+    } */
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Table base styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    min-width: 900px;
+    /* Prevent cramping on small devices */
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+td {
+    font-size: 15px;
+}
+
+th {
+    background-color: #e6f9e6;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e9f5ff;
+}
+
+/* Responsive tweaks for smaller devices */
+@media (max-width: 768px) {
+    th {
+        font-size: 16px;
     }
 
-    /* edit view delete */
-    .buttonc {
+    td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+
+/* edit view delete */
+.buttonc {
     position: relative;
     overflow: hidden;
-    background-color: #1d3557; /* blue */
+    background-color: #1d3557;
+    /* blue */
     color: white;
     border: none;
     padding: 5px 6px;
-    
+
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     z-index: 1;
     transition: transform 0.3s ease;
-    }
+}
 
-    .buttonc::before {
-        content: '';
-        position: absolute;
-        top: -100%;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #fd7e14; /* orange */
-        transition: top 0.4s ease;
-        z-index: 0;
-    }
+.buttonc::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fd7e14;
+    /* orange */
+    transition: top 0.4s ease;
+    z-index: 0;
+}
 
-    .buttonc:hover::before {
-        top: 0;
-    }
+.buttonc:hover::before {
+    top: 0;
+}
 
-    .buttonc:hover {
-        transform: translateY(-5px); /* button lifts slightly */
-    }
+.buttonc:hover {
+    transform: translateY(-5px);
+    /* button lifts slightly */
+}
 
-    .buttonc i {
-        position: relative;
-        z-index: 1;
-    }
+.buttonc i {
+    position: relative;
+    z-index: 1;
+}
+
+.divc {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* go to add back */
+.buttonbi {
+    position: relative;
+    overflow: hidden;
+    background-color: #fd7e14;
+    /* dark blue */
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.buttonbi::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+
+    height: 100%;
+    background-color: #1d3557;
+    /* orange */
+    transition: left .5s ease;
+    z-index: 0;
+}
+
+.buttonbi:hover::before {
+    left: 0;
+
+}
+
+.buttonbi:hover {
+    transform: translateY(-5px);
+    color: white;
+
+}
+
+.buttonbi span,
+.buttonbi i {
+    position: relative;
+    z-index: 2;
+    /* ensures text stays above hover effect */
+}
+
+.divbi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+/* submit */
+.buttonbis {
+    position: relative;
+    overflow: hidden;
+    background-color: #2e8b57;
+    /* green */
+    color: white;
+    /* default text color */
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1;
+    /* Ensures the text stays above the background */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* Add color transition */
+}
+
+.buttonbis::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fd7e14;
+    /* darker green */
+    transition: top 0.4s ease;
+    z-index: 0;
+    /* Keeps the background below the text */
+}
+
+.buttonbis:hover::before {
+    top: 0;
+    /* Moves the background up on hover */
+}
+
+.buttonbis:hover {
+    transform: translateY(-5px);
+    /* Lift button on hover */
+    color: white;
+    /* Ensure text stays white on hover */
+}
+
+.buttonbis i {
+    position: relative;
+    z-index: 2;
+    /* Ensures icons stay above the background */
+}
+
+.buttonbis span {
+    position: relative;
+    z-index: 2;
+    /* Ensures text stays above the background */
+}
 
 
-     /* go to add back */
-    .buttonbi {
-        position: relative;
-        overflow: hidden;
-        background-color: #fd7e14 ; /* dark blue */
-        color: white;
-        border: none;
-        padding: 8px 14px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        z-index: 1;
-        transition: transform 0.3s ease;
-    }
-    
-    .buttonbi::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left:-100%;
-        width: 100%;
-        
-        height: 100%;
-        background-color: #1d3557; /* orange */
-        transition: left .5s ease;
-        z-index: 0;
-    }
-    
-    .buttonbi:hover::before {
-        left: 0;
-        
-    }
-    
-    .buttonbi:hover {
-        transform: translateY(-5px);
-        color: white;
-       
-    }
-    
-    .buttonbi span, .buttonbi i {
-        position: relative;
-        z-index: 2; /* ensures text stays above hover effect */
-    }
-    
-    .divbi {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 15px;
-    }
-
-    /* submit */
-    .buttonbis {
-        position: relative;
-        overflow: hidden;
-        background-color:  #2e8b57 ; /* green */
-        color: white; /* default text color */
-        border: none;
-        padding: 8px 14px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        z-index: 1; /* Ensures the text stays above the background */
-        transition: transform 0.3s ease, color 0.3s ease; /* Add color transition */
-    }
-    
-    .buttonbis::before {
-        content: '';
-        position: absolute;
-        top: -100%;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color:    #fd7e14; /* darker green */
-        transition: top 0.4s ease;
-        z-index: 0; /* Keeps the background below the text */
-    }
-    
-    .buttonbis:hover::before {
-        top: 0; /* Moves the background up on hover */
-    }
-    
-    .buttonbis:hover {
-        transform: translateY(-5px); /* Lift button on hover */
-        color: white; /* Ensure text stays white on hover */
-    }
-    
-    .buttonbis i {
-        position: relative;
-        z-index: 2; /* Ensures icons stay above the background */
-    }
-    
-    .buttonbis span {
-        position: relative;
-        z-index: 2; /* Ensures text stays above the background */
-    }
-    
-
-    .product-form {
+.product-form {
     max-width: 400px;
     margin: 20px auto;
     padding: 20px;
@@ -190,7 +260,10 @@
     margin-bottom: 5px;
 }
 
-.product-form input[type="text"],input[type="number"] ,select,textarea{
+.product-form input[type="text"],
+input[type="number"],
+select,
+textarea {
     width: 100%;
     padding: 8px 10px;
     border: 1px solid #ccc;
@@ -198,71 +271,77 @@
     margin-bottom: 15px;
     font-size: 16px;
 }
-   .school-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 2px solid #000;
-        padding-bottom: 15px;
-        margin-bottom: 30px;
-    }
 
-    .school-logo img {
-        height: 80px;
-    }
+.school-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
 
-    .school-name {
-        text-align: center;
-        flex-grow: 1;
-    }
+.school-logo img {
+    height: 80px;
+}
 
-    .school-name h1 {
-        margin: 0;
-        font-size: 24px;
-        color: #000; /* Original black color */
-        font-weight: bold;
-    }
+.school-name {
+    text-align: center;
+    flex-grow: 1;
+}
 
-    .school-name p {
-        margin: 4px 0;
-        font-size: 14px;
-        color: #000; /* Original black color */
-    }
+.school-name h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #000;
+    /* Original black color */
+    font-weight: bold;
+}
 
-    .school-slogan {
-        text-align: right;
-        font-style: italic;
-        font-size: 13px;
-        color: #000; /* Original black color */
-        max-width: 150px;
-    }
-    
-    
+.school-name p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #000;
+    /* Original black color */
+}
+
+.school-slogan {
+    text-align: right;
+    font-style: italic;
+    font-size: 13px;
+    color: #000;
+    /* Original black color */
+    max-width: 150px;
+}
 
 
-    .home-sci{
+
+
+.home-sci {
     position: absolute;
     width: 170px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.home-sci a{
-      position: relative;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 50px;
-      height: 50px;
-      border: 2px solid #00abf0;
-      border-radius: 50%;
-      font-size: 20px;
-      color: #00abf0;
-      text-decoration: none;
-      z-index: 1;
-      overflow: hidden;
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
 }
-.home-sci a::before{
+
+.home-sci a::before {
     content: '';
     position: absolute;
     top: 0;
@@ -272,21 +351,15 @@
     background: #00abf0;
     z-index: -1;
     transition: 1s;
-  
+
 
 }
-.home-sci a:hover::before{
+
+.home-sci a:hover::before {
     width: 100%;
 }
-.home-sci a:hover{
+
+.home-sci a:hover {
     /* color: #081b29; */
     color: white;
 }
-    
-    
-    
-    
-
-
-    
-    

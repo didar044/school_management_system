@@ -18,7 +18,7 @@
     
 </div>
 
-
+<div class="table-responsive ">
 <table>
     <tr>
          
@@ -68,6 +68,7 @@
     </tr>
     @endforelse
 </table>
+</div>
 <div style="margin-top:10px;">
 {{ $studentattendances->links('pagination::bootstrap-5') }}
 </div>

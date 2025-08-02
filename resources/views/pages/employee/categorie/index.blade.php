@@ -9,6 +9,7 @@
         <span>Add Categorie</span>
     </a>
 </div>
+<div class="table-responsive ">
 <table>
     <tr>
         <th>Id</th>
@@ -44,6 +45,6 @@
     </tr>
     @endforelse
 </table>
-
+</div>
 
 @endsection

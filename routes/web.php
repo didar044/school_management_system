@@ -39,7 +39,6 @@ use App\Http\Controllers\Fee\FeecollectionController;
 use App\Http\Controllers\Library\BookController;
 use App\Http\Controllers\Library\BookIssueController;
 use App\Http\Controllers\AllTableData\TableDataController;
-
 use App\Http\Controllers\AuthController;
 
 

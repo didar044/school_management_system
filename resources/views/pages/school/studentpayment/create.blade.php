@@ -376,7 +376,7 @@
                 </select>
             </div>
         </div>
-
+     <div class="table-responsive ">
         <!-- Invoice Table -->
         <table id="invoiceTable">
             <thead>
@@ -458,6 +458,7 @@
                 </tr>
             </tbody>
         </table>
+        </div>
 
         <!-- Summary Section -->
         <div

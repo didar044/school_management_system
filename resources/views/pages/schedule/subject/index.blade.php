@@ -9,6 +9,7 @@
         <span>Add Subject</span>
     </a>
 </div>
+<div class="table-responsive ">
 <table>
     <tr>
         <th>Subject Code</th>
@@ -43,6 +44,6 @@
     </tr>
     @endforelse
 </table>
-
+</div>
 
 @endsection

@@ -42,7 +42,7 @@ table,tr,td{
             <h2> "Empowering Young Minds<br>for a Brighter Future"</h2>
         </div>
 </div>
-      
+     <div class="table-responsive ">
 <table>
     <thead>
         <tr>
@@ -113,6 +113,6 @@ table,tr,td{
         @endforelse
     </tbody>
 </table>
-
+</div> 
 
 @endsection

@@ -2,7 +2,7 @@
 @section('page')
 
 
-    <style>
+    <!-- <style>
         
 
        
@@ -128,7 +128,172 @@
             border-top: 1px solid #333;
             padding-top: 5px;
         }
-    </style>
+    </style> -->
+
+
+    <style>
+    .invoice-box {
+        background-color: #fff;
+        padding: 30px;
+        max-width: 1400px;
+        margin: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow-x: auto;
+    }
+
+    h2 {
+        text-align: center;
+        color: #2e8b57;
+        margin-bottom: 5px;
+    }
+
+    .subtitle {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 16px;
+        color: #666;
+    }
+
+    .invoice-details {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .field-group {
+        flex: 1 1 45%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 10px;
+        min-width: 250px;
+    }
+
+    .field-group label {
+        flex: 0 0 100px;
+        padding: 5px 0;
+    }
+
+    .field-group input,
+    .field-group select {
+        flex: 1;
+        border: 1px solid #ccc;
+        padding: 6px 10px;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 5px;
+        color: #333;
+        background-color: #f9f9f9;
+    }
+
+    .salary-breakdown {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+        min-width: 600px;
+    }
+
+    .salary-breakdown th,
+    .salary-breakdown td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .salary-breakdown th {
+        background-color: #e0f7e9;
+        color: #2e8b57;
+        text-align: center;
+    }
+
+    .salary-breakdown td:nth-child(2),
+    .salary-breakdown td:nth-child(3) {
+        text-align: center;
+    }
+
+    .salary-breakdown input {
+        border: none;
+        background: transparent;
+        width: 100px;
+        text-align: center;
+    }
+
+    .summary {
+        margin-top: 20px;
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+    }
+
+    .summary .label {
+        font-weight: bold;
+        font-size: 16px;
+        color: #333;
+    }
+
+    .summary input {
+        width: 150px;
+        padding: 6px 10px;
+        font-size: 14px;
+        font-weight: bold;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        text-align: right;
+    }
+
+    .signatures {
+        display: flex;
+        justify-content: space-around;
+        margin: 50px 0;
+        text-align: center;
+    }
+
+    .signatures .line {
+        margin-top: 60px;
+        border-top: 1px solid #333;
+        padding-top: 5px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .field-group {
+            flex: 1 1 100%;
+        }
+
+        .salary-breakdown,
+        .summary input {
+            width: 100%;
+        }
+
+        .summary {
+            align-items: stretch;
+        }
+
+        .summary input {
+            text-align: left;
+        }
+    }
+
+    .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.table-responsive table {
+    min-width: 700px; /* Ensures the table scrolls horizontally if needed */
+}
+
+</style>
 
 <div class="divbi">   
   <form method="GET" action="{{ route('employeesalarypayments.create') }}">
@@ -253,8 +418,9 @@
 
 
   
-        <div style="display: flex;">
-            <table class="salary-breakdown">
+        <div style="display: flex; " class="table-responsive">
+
+            <table class="salary-breakdown" >
                     <thead>
                         <tr><th colspan="4"  style="background:gray; color:white;">Salary Allownece</th></tr>
                         <tr>
@@ -340,6 +506,7 @@
                         
                     </tbody>
             </table>
+
         </div>
         <div class="summary" >
             <div><span class="label" >Amount Paid:</span> <input type="number"  name="paid" id="paid" style="width: 150px;" required > </div>

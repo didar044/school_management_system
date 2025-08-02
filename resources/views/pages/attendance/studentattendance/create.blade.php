@@ -114,6 +114,7 @@
     </div>
 
     <!-- Attendance Table -->
+      <div class="table-responsive ">
     <table class="table table-bordered">
         <thead>
             <tr style="background-color: #f0f0f0;">
@@ -171,7 +172,7 @@
             @endforeach
         </tbody>
     </table>
-
+</div>
     <!-- Submit Button -->
     <div style="text-align: center; margin-top: 20px;">
         <button type="submit" class="buttonbis"><span>Submit Attendance</span></button>

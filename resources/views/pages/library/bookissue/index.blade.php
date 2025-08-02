@@ -9,6 +9,7 @@
         <span>Add Book Issue</span>
     </a>
 </div>
+<div class="table-responsive ">
 <table>
     <tr>
         <th>Id</th>
@@ -64,7 +65,7 @@
     </tr>
     @endforelse
 </table>
-
+</div>
 <div style="margin-top:10px;">
 {{ $bookissues->links('pagination::bootstrap-5') }}
 </div>

@@ -13,6 +13,8 @@ class AuthController extends Controller
         return view('auth.showloging');
     }
 
+
+
     public function loging(Request $request){
               $credential=$request->only('email','password');
               if(Auth::attempt($credential)){
@@ -21,9 +23,11 @@ class AuthController extends Controller
              return back()->withErrors(['message'=>'Invalid Credantials']); 
     }
 
+
     public function showregister(){
         return view('auth.register');
     }
+    
     public function register(Request $request){
         $request->validate([
              'name'=>'required|string|max:100',

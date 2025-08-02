@@ -78,38 +78,41 @@
         }
 
 
-       @media print {
-        @page {
-            margin: 0;
-        }
+        @media print {
+            @page {
+                margin: 0;
+            }
 
-        body, html {
-            margin: 0;
-            padding: 0;
-           
-        }
+            body,
+            html {
+                margin: 0;
+                padding: 0;
 
-        .result-sheet {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            max-width: 800px;
-            margin: 0;
-            padding: 0;
-            border: none;
-            box-shadow: none;
-            page-break-inside: avoid;
-        }
-           .divbi {
-            display: none;
-        }
+            }
 
-        html, body {
-            height: 100%;
-            background: #fff;
-        }
+            .result-sheet {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                max-width: 800px;
+                margin: 0;
+                padding: 0;
+                border: none;
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+
+            .divbi {
+                display: none;
+            }
+
+            html,
+            body {
+                height: 100%;
+                background: #fff;
+            }
         }
     </style>
 
@@ -122,7 +125,7 @@
             <button type="submit" class="buttonbis"><span> Search </span> </button>
         </form>
         <button onclick="window.print()" class="buttonbis"><span>Print Page</span></button>
-        <a class="buttonbi"   href="{{ url('/') }}"><span>Home</span></a>
+        <a class="buttonbi" href="{{ url('/') }}"><span>Home</span></a>
     </div>
 
 
@@ -155,33 +158,34 @@
 
 
                 <h4> Examination</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Subject</th>
-                            <th>Written</th>
-                            <th>MCQ</th>
-                            <th>Total</th>
-                            <th>GPA</th>
-                            <th>Grade</th>
-                            <th>Remark</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <div class="table-responsive ">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Written</th>
+                                <th>MCQ</th>
+                                <th>Total</th>
+                                <th>GPA</th>
+                                <th>Grade</th>
+                                <th>Remark</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
 
-                    </tbody>
-                </table>
-
+                        </tbody>
+                    </table>
+                </div>
                 <div class="summary">
                     <div class="info-item"><label>Total Marks:</label> </div>
                     <div class="info-item"><label>Average:</label></div>
@@ -448,7 +452,7 @@
                 <div class="line">Headmaster's Signature</div>
             </div>
 
-              
+
         </div>
 
     @endif

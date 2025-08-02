@@ -19,7 +19,7 @@
         </button>
     @endforeach
 </div>
-
+ <div class="table-responsive ">
 <table>
     <tr>
         <th>Id</th>
@@ -68,6 +68,7 @@
        </tr>
        @endforelse
 </table>
+</div>
 <script>
 function filterByDay(day) {
     document.getElementById('dayInput').value = day;

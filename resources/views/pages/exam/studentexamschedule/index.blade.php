@@ -105,7 +105,7 @@
     <button type="submit" class="buttonc"><i>Filter</i></button>
   </form>
 </div>
-
+<div class="table-responsive ">
 <table>
     <tr>
              <th>ID</th>
@@ -154,6 +154,7 @@
     </tr>
     @endforelse
 </table>
+</div>
 <div style="margin-top:10px;">
 {{ $studentexamschedules ->links('pagination::bootstrap-5') }}
 </div>

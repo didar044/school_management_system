@@ -311,7 +311,7 @@
                     <div class="form-group">
                         <label for="date">Reiceve By</label>
                         <select id="reiceve_by" name="reiceve_by" required>
-                            <option value="">- Select -</option>
+                            <option value="">- sent to database-</option>
                             @foreach ($employeeadministrators as $employeeadministrator)
                                 @if (
                                         $employeeadministrator->role === "Accountants" ||
@@ -327,6 +327,7 @@
                 </div>
 
                 <!-- Invoice Table -->
+                 <div class="table-responsive ">
                 <table id="invoiceTable">
                     <thead>
                         <tr>
@@ -375,7 +376,7 @@
                         </tr>
                     </tbody>
                 </table>
-
+                 </div>
                 <!-- Summary Section -->
                 <div class="summary" style="display: flex; justify-content: space-between">
                     <div style="margin-top: 25px">
@@ -404,6 +405,7 @@
         @if($paymentHistory && $paymentHistory->count())
             <h2 class="mb-2" style="text-align: center;">Previous Payments</h2>
             <div class="table-responsive">
+                <div class="table-responsive ">
                 <table>
                     <thead>
                         <tr>
@@ -425,14 +427,12 @@
                                     <td>{{ $detail->fee }}</td>
                                     <td>{{ $detail->waived }}</td>
                                     <td>{{ $detail->fee - $detail->waived }}</td>
-                                   
                                 </tr>
                             @endforeach
-                             
                         @endforeach
-                       
                     </tbody>
                 </table>
+                </div>
             </div>
         @endif
     </div>

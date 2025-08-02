@@ -16,13 +16,17 @@
         <span>Application</span>
      </a>
 </div>
+<div class="table-responsive ">
 <table>
     <tr>
         <th>Id</th>
         <th>Name</th>
-        <th>Photo</th>
+        <th>Father Name</th>
+        <!-- <th>Photo</th> -->
         <th>Class</th>
         <th>Shift</th>
+        <th>Section</th>
+        <th>Application Date</th>
         <th>Con.Num.</th>
         <th>Address</th>
         <th>Acttion</th>
@@ -32,9 +36,12 @@
     <tr>
         <td>{{$application->id}}</td>
         <td>{{$application->name}}</td>
-        <td><img src='{{url("/image/appplication_img/$application->photo")}}'  alt=""  height=70px; width=100px; ></td>
+        <td>{{$application->father_name}}</td>
+        <!-- <td><img src='{{url("/image/appplication_img/$application->photo")}}'  alt=""  height=70px; width=100px; ></td> -->
         <td>{{$application->classe->name}}</td>
         <td>{{$application->shift->name}}</td>
+        <td>{{$application->section->name}}</td>
+        <td>{{ $application->date }}</td>
         <td>{{$application->mobile_number}}</td>
         <td>{{$application->address}}</td>
         <td>
@@ -56,6 +63,7 @@
     </tr>
     @endforelse
 </table>
+</div>
 
 <div style="margin-top:10px;">
 {{ $applications->links('pagination::bootstrap-5') }}

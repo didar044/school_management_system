@@ -18,6 +18,7 @@
         <span>Home</span>
      </a>
 </div>
+<div class="table-responsive ">
 <table>
     <tr>
         <th>St. Id</th>
@@ -58,7 +59,7 @@
     </tr>
     @endforelse
 </table>
-
+</div>
 <div style="margin-top:10px;">
 {{ $students->links('pagination::bootstrap-5') }}
 </div>

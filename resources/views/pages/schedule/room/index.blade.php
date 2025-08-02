@@ -10,6 +10,7 @@
         <span>Add Room</span>
     </a>
 </div>
+<div class="table-responsive ">
 <table>
     <tr>
         <th>Room Number</th>
@@ -47,7 +48,7 @@
     </tr>
     @endforelse
 </table>
-
+</div>
 <div style="margin-top:10px;">
 {{ $rooms->links('pagination::bootstrap-5') }}
 </div>
