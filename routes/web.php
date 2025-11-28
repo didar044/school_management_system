@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SocialAuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Batch\ClasseController;
@@ -49,7 +50,23 @@ use App\Http\Controllers\AuthController;
 //     return view('homes.home');
 // });
 
+Route::get('reboot', function () {
+   // Artisan::call('storage:link');
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('route:clear');
+    Artisan::call('config:cache');
+    dd("Ready to Start.");
+});
+
 Route::middleware('guest')->group(function () {
+    //Github Login
+    Route::get('auth/github/callback',[SocialAuthController::class,'githubcallback'])->name('github.callback');
+    Route::get('auth/github/redirect',[SocialAuthController::class,'githubredirect'])->name('github.redirect');
+    
+    //Github Login
+    Route::get('auth/facebook/callback',[SocialAuthController::class,'facebookcallback'])->name('facebook.callback');
+    Route::get('auth/facebook/redirect',[SocialAuthController::class,'facebookredirect'])->name('facebook.redirect');
 
     Route::get('/login', [AuthController::class, 'index'])->name('login');
     Route::post('/login', [AuthController::class, 'loging'])->name('login.submit');

@@ -52,11 +52,12 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://didar.intelsofts.com/School/public'),
 
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
+
     |--------------------------------------------------------------------------
     |
     | Here you may specify the default timezone for your application, which
@@ -122,5 +123,7 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
+    // config/app.php
+    
 
 ];
